@@ -2,6 +2,6 @@ const isDevelopmentMode = process.env.MODE === "DEV";
 
 const clientURL = isDevelopmentMode
   ? "http://localhost:5173"
-  : process.env.FRONTEND_URL;
+  : "https://musiana.vercel.app";
 
 module.exports = { clientURL };
