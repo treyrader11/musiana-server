@@ -125,10 +125,9 @@ const trend = async (req, res, next) => {
 
 //get all videos. should be sorted by random
 const all = async (req, res, next) => {
-    console.log('Inside of "all" controller. req.body:', req.body);
     try {
         const videos = await Video.aggregate([{ $sample: { size: 40 } }]);
-        console.log('random videos:', videos)
+        // console.log('random videos:', videos)
         res.status(StatusCodes.OK).json(videos);
     } catch (err) {
         next(err);
